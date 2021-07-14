@@ -26,6 +26,8 @@ but.onclick = () => {
         "Class : " + e.Details.class;
       document.getElementById("exam").innerHTML =
         "Name of Exam : " + e.Details.exam;
+     document.getElementById("rank").innerHTML =
+        "Rank : " + e.Details.rank;
 
       let Marks = e.Marks;
     let bTable = `<thead>
