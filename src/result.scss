@@ -24,6 +24,8 @@
     .Pri * {
       visibility: visible;
       max-height: 100%;
+    -webkit-print-color-adjust: exact;
+
     }
     
     -webkit-print-color-adjust: exact;
