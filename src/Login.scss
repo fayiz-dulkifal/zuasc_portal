@@ -1,0 +1,94 @@
+@import "./index.scss";
+
+.Loginer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  height: 100vh;
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    .Sider{
+      div{
+        padding: 20px !important;
+      }
+    }
+    .Inputs {
+      margin-top: 30px !important;
+    }
+    .action{
+      width: 100% !important;
+    }
+  }
+
+  .Sider {
+    background: linear-gradient(transparent, hsl(78, 90%, 16%)),
+      url("https://zuwasc.com/wp-content/uploads/2021/07/zuwasc-06-1.jpg");
+    background-size: cover;
+    background-position:center;
+
+    display: flex;
+    div {
+      text-align: center;
+      padding: 60px;
+      color: white;
+      margin: auto;
+      margin-top: auto;
+      margin-bottom: 30px;
+    }
+  }
+  .action {
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    & > div {
+      display: grid;
+      place-content: center;
+      place-items: center;
+      img {
+        width: 60%;
+      }
+      .Inputs {
+        margin-top: 100px;
+        width: 200px;
+        button {
+          width: 100%;
+        }
+      }
+
+      input {
+        padding: 8px 12px;
+        width: 100%;
+        background: hsl(78, 100%, 98%);
+        margin: 10px 0;
+        border-radius: 5px;
+
+        border: none;
+        border-bottom: 2px solid $pri;
+        outline: none;
+        box-sizing: border-box;
+        &:hover {
+          border: 2px solid $pri;
+          transition: 0.2s;
+        }
+      }
+    }
+  }
+}
+button {
+  background: linear-gradient(100deg, hsl(78, 93%, 28%), hsl(78, 100%, 20%));
+  border-radius: 5px;
+  border: none;
+  padding: 8px 15px;
+  color: white;
+  cursor: pointer;
+}
+
+.spinner-3 {
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:conic-gradient(#0000 10%,#25b09b);
+  -webkit-mask:radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+  animation:s3 1s infinite linear;
+}
+@keyframes s3 {to{transform: rotate(1turn)}}
