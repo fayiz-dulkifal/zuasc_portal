@@ -6,17 +6,26 @@
   padding: 20px;
   box-sizing: border-box;
   display: flex;
-
+  @page {
+    size: A4;
+    margin: 0;
+  }
   @media print {
-    background: white;
-    body,
-    * {
-      visibility: hidden;
-    }
+    background: rgb(71, 24, 24);
+    position: static;
+    position: absolute;
+
+    padding: 0px;
+    overflow: hidden;
+    page-break-after: always;
+   
+   
     .Pri,
     .Pri * {
       visibility: visible;
+      max-height: 100%;
     }
+    
     -webkit-print-color-adjust: exact;
   }
   .Action {
@@ -46,10 +55,8 @@
     width: min(500px, 100vw);
     margin: 0 auto;
     background: white;
-    padding: 20px 40px;
+    padding: 20px;
     overflow: auto;
-    
-    
   }
   .Details {
     display: flex;
@@ -59,23 +66,53 @@
     padding: 20px;
     border-bottom: 1px solid #ccc;
   }
-  .Head{
+  .Head {
+    display: grid;
+    place-content: center;
+    place-items: center;
+    b {
+      font-weight: 900;
+      font-size: 20px;
+      line-height: 45px;
+    }
+    small {
+      font-size: 12px;
+      text-align: center;
+    }
+    .exmName {
+      margin-top: 10px;
+      text-align: center;
+      background: black;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    ._headName {
       display: grid;
-      place-content: center;
+      grid-template-columns: 50px 1fr;
+      grid-gap: 20px;
       place-items: center;
-    img {
-        width: min(300px, 80vw);
-    margin-bottom: 5px;
-      }
-      h2 {
-        margin: 0;
-        margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #ccc;
+      place-items: center;
+      place-content: center;
+      @media (max-width: 600px) {
+        grid-template-columns: 1fr;
         text-align: center;
       }
+      img {
+        width: 55px;
+      }
+      div {
+        font-size: 25px;
+        line-height: 25px;
+      }
+    }
   }
-  
+
   width: 100%;
   .marks {
+    overflow: auto;
     margin-top: 20px;
     text-transform: uppercase;
     & > :nth-child(1) {
@@ -101,7 +138,8 @@
     // flex-wrap: wrap;
     gap: 20px;
     & > div {
-      border-bottom: 1px solid;
+      min-width: 240px;
+      border-bottom: 1px solid #ccc;
       background: white;
       padding: 5px 8px;
       display: flex;
