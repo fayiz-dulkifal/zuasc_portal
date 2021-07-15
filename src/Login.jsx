@@ -56,7 +56,7 @@ export default function Login() {
                 onClick={() => {
                   setData("Loading")
                   fetch(
-                    `https://script.google.com/macros/s/AKfycbwvkcShwedkPp96FupqpdhxbANmdetnye2le9se_wa63-d_JUw3mknLgYskxCiMY-OEeA/exec?id=${Reg}`
+                    `https://script.google.com/macros/s/AKfycbzN-sMsycPpUfLciXfPe9ZB50Mevf_F4pNAxBtcv9Turq-AsklRr-DswrJF8bEfuN9wLg/exec?id=${Reg}`
                   )
                     .then(e=>e.json())
                     .then((e) => {
